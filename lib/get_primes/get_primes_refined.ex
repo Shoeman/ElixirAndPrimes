@@ -1,4 +1,5 @@
 defmodule GetPrimes.GetPrimesRefined do
+  @behaviour PrimeGetter
   @moduledoc """
   Refined naive approach to getting first N primes
 
@@ -11,10 +12,12 @@ defmodule GetPrimes.GetPrimesRefined do
   Still slow compared with other methods, but still lazy
   """
 
+  @impl true
   def get_primes(n) when n == 0 do
     []
   end
 
+  @impl true
   def get_primes(n) do
     Stream.unfold({2}, &{&1, Tuple.append(&1, get_next_prime(&1))})
     |> Enum.take(n)

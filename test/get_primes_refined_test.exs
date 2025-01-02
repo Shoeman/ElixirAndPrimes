@@ -4,6 +4,8 @@ defmodule GetPrimesRefinedTest do
   alias GetPrimes.GetPrimesRefined
   alias GetPrimesRefined, as: G
 
+  doctest PrimeGetter
+
   test "0 returns empty" do
     result = G.get_primes(0)
 
