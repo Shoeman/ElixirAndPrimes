@@ -1,4 +1,5 @@
 defmodule GetPrimes.GetPrimesSlowSieve do
+  @behaviour PrimeGetter
   @moduledoc """
   Get first n primes using the sieve of Eratosthenes in the form of a 'lazy' Stream
 
